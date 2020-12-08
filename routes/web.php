@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/comics','App\Http\Controllers\ComicsController@index'); 
 Route::get('/about','App\Http\Controllers\PagesController@about');  
-Route::get('/favorites','App\Http\Controllers\PagesController@favorites'); 
-Route::get('/comicsList','App\Http\Controllers\PagesController@comicsList');
+Route::get('/favorites','App\Http\Controllers\ComicsController@favorites'); 
+Route::get('/comicsList','App\Http\Controllers\ComicsController@comicsList');
 Route::get('/contact','App\Http\Controllers\PagesController@contact');
 Route::get('/register','App\Http\Controllers\PagesController@register');
+Route::get('/titles/{name}','App\Http\Controllers\PagesController@titles');
+Route::get('/chapter/{name}/{no}','App\Http\Controllers\PagesController@chapter');
 
 
 Route::resource('/','App\Http\Controllers\PagesController'); 

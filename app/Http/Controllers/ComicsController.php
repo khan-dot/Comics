@@ -18,6 +18,24 @@ class ComicsController extends Controller
         return view('pages.index')->with('comics', $comics);
     }
 
+
+     public function favorites()
+    {
+         $comics2 = Comic::all();
+        return view('pages.favorites')->with('comics', $comics2);
+        
+
+    }
+      public function comicsList()
+    {
+         $comics3 = Comic::all();
+        return view('pages.comicsList')->with('comics', $comics3);
+        
+
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *

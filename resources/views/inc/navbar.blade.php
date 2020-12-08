@@ -4,7 +4,7 @@
     <div class="container d-flex">
       <div class="contact-info mr-auto">
           <i class="icofont-envelope"></i><a href="#">comicsonline@yahoo.com</a>
-          <i class="icofont-phone"></i> 03** *******
+          <i class="icofont-phone"></i> +92 *** *******
       </div>
       <div class="social-links">
         <a href="#" class="twitter"><i class="icofont-twitter"></i></a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comic;
 
 class PagesController extends Controller
 {
@@ -23,10 +24,7 @@ class PagesController extends Controller
     {
         return view('Pages.comicsList');
     }
-     public function favorites()
-    {
-        return view('Pages.favorites');
-    }
+    
      public function contact()
     {
         return view('Pages.contact');
@@ -35,7 +33,19 @@ class PagesController extends Controller
     {
         return view('Pages.register');
     }
-
+      public function titles(request $request, string $name)
+    {
+        $data=[];
+        $data['comic'] = Comic::where('comic', '=', $name)->first();
+        $data['name']=$name;
+        return view('pages.titles', $data);
+    }
+      public function chapter(request $request, string $name,string $no)
+    {
+         $data['name']=$name;
+        $data['no']=$no;
+        return view('pages.chapter', $data);
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -5,27 +5,27 @@
 
 <br><br>
 
-<<section id="testimonials" class="testimonials">
+<section id="testimonials" class="testimonials">
       <div class="container">
 
         <div class="owl-carousel testimonials-carousel" data-aos="zoom-in">
 
           <div class="testimonial-item">
             <img src="\images\thumbnails\Logo.png" class="testimonial-img" alt="">
-            <h3>Welcome To ComicsOnLinE</h3>
-            <h4>Best place for reading Comics</h4>
+            <h2>Welcome To ComicsOnLinE</h2>
+            <h3>Best place for <br>reading Comics</h3>
           </div>
 
           <div class="testimonial-item">
-            <img src="\images\thumbnails\c1.jpg" class="testimonial-img" alt="">
-            <h3>You can both read and Socialize</h3>
-            <h4>Don't forget to leave comments and feed back</h4>
+            <img src="\images\thumbnails\c2.jpg" class="testimonial-img" alt="">
+            <h2>You can both read and Socialize</h2>
+            <h3>Don't forget to leave comments <br>and feedback.</h3>
           </div>
 
           <div class="testimonial-item">
             <img src="\images\thumbnails\c3.jpg" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
+            <h2>Enjoy it</h2>
+            <h3>We are always open.</h3>
           </div>
 
         </div>
@@ -38,23 +38,29 @@
 <br>
 
 @if(count($comics)>0)
-<div class="continer">
-	<br><br>
 	@foreach($comics as $comic)
-	<a href="#">
-		<div >
-			<div style="padding-left: 20%">
-			<img src="\images\thumbnails\{{$comic->comic}}.jpg" width="50%" height="50%">
-			<h3><b>{{$comic->comic}}</b></h3>
-			<small>Artist: {{$comic->artist_name}}</small>
-			<p>Geners: <small>{{$comic->gener}}</small></p>
-			<br><hr style="color: #70d640"><br>
-			</div>
-		</div>
-	</a>
+  <a href="/titles/{{{$comic->comic}}}">
+	<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-img">
+                <img src="\images\thumbnails\{{$comic->comic}}.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="member-info">
+                <h3 style="color: white">{{$comic->comic}}</h3>
+                <span style="color: white">
+                	<small>Artist: {{$comic->artist_name}}</small>
+                	<p>Geners: <small>{{$comic->gener}}</small></p>
+                </span>
+            </div>
+        </div>
+  </div>
+  </a>
+
 	@endforeach
-</div>
+
 @else
 <p>no updates yet</p>
 @endif
+
+
 @endsection
