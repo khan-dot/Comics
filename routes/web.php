@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/comics','App\Http\Controllers\ComicsController@index'); 
 Route::get('/about','App\Http\Controllers\PagesController@about');  
 Route::get('/favorites','App\Http\Controllers\ComicsController@favorites'); 
+
 Route::get('/comicsList','App\Http\Controllers\ComicsController@comicsList');
 Route::get('/contact','App\Http\Controllers\PagesController@contact');
 Route::get('/register','App\Http\Controllers\PagesController@register');
